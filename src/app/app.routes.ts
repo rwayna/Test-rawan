@@ -5,7 +5,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostItemComponent } from './post-item/post-item.component';
 
 export const routes: Routes = [
-    { path: '', component: LoginComponent },      
+    { path: 'login', component: LoginComponent },      
     { path: 'postList', component: PostListComponent }, 
     { path: 'postItem/:id', component: PostItemComponent }, 
     
