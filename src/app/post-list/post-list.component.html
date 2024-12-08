@@ -1,12 +1,25 @@
-<div class="container mt-4">
-    <div class="post-list card">
-      <div class="card-header bg-primary text-white">
-        <h2 class="mb-0">Post List</h2>
+
+  <div class="accordion" id="accordionExample">
+    <div *ngFor="let item of postslist; let i = index" class="accordion-item" (click)="navigateToPostItem(item.id)">
+      <h2 class="accordion-header" id="heading{{i}}">
+        <button
+          class="accordion-button"
+          type="button"
+          data-bs-toggle="collapse"
+          aria-expanded="true"
+        >
+          {{ item.title }}
+        </button>
+      </h2>
+      <div
+        id="collapse{{i}}"
+        class="accordion-collapse collapse"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          {{ item.content }}
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li *ngFor="let post of postslist" class="list-group-item" (click)="navigateToPostItem(post.id)">
-          {{ post.title }} 
-        </li>
-      </ul>
     </div>
   </div>
+  
